@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Helvetica', 'sans-serif';
+        }
+
+        button {
+            width: 100px;
+            height: fit-content;
+            padding: 5px 0;
+            background-color: #D9D9D9;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        input {
+            height: 50px;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 360px;
+            font-size: 24px;
+        }
+
+        input:hover {
+            border-color: #aaa;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .note-card {
+            position: relative;
+            background: #D9D9D9;
+            padding: 10px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .note-content {
+            background-color: #FC9F9F;
+            width: 650px;
+            height: 46px;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+
+        .date-box {
+            background: #F71616;
+            width: 150px;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+        .date-box__top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .date-box__bottom {
+            text-align: center;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .note-actions {
+            cursor: pointer;
+            padding: 5px 0 5px 5px;
+            display: flex;
+            border-radius: 10px;
+        }
+
+        .note-actions img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .note-add {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0 60px;
+        }
+
+        .note-add__actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const DataContext = React.createContext();
+
+        function DataProvider({ children }) {
+            const [tasks, setTasks] = React.useState([]);
+            return (
+                <DataContext.Provider value={{ tasks, setTasks }}>
+                    {children}
+                </DataContext.Provider>
+            );
+        }
+
+        function NoteCard({ content, date, completed }) {
+            return (
+                <div className={`note-card ${completed ? 'completed' : ''}`}>
+                    <div className="note-content">{content}</div>
+                    <DateView date={date} />
+                    <div className="note-actions">
+                        <button>Edit</button>
+                        <button>Delete</button>
+                        <button>Done</button>
+                    </div>
+                </div>
+            );
+        }
+
+        function DateView({ date }) {
+            return (
+                <div className="date-box">
+                    <div className="date-box__top">
+                        <div>{date.day}</div>
+                    </div>
+                    <div className="date-box__bottom">{date.start} - {date.end}</div>
+                </div>
+            );
+        }
+
+        function NoteList() {
+            const { tasks } = React.useContext(DataContext);
+            return (
+                <div className="note-list">
+                    {tasks.map((note, i) => (
+                        <NoteCard key={i} {...note} />
+                    ))}
+                </div>
+            );
+        }
+
+        function NoteAdd() {
+            const { tasks, setTasks } = React.useContext(DataContext);
+            const [newNote, setNewNote] = React.useState("");
+            const [date, setDate] = React.useState(new Date().toISOString().split("T")[0]);
+            const [startTime, setStartTime] = React.useState("09:00");
+            const [endTime, setEndTime] = React.useState("10:00");
+
+            const addTask = () => {
+                if (!newNote.trim()) return;
+                setTasks([...tasks, {
+                    content: newNote,
+                    date: { day: date, start: startTime, end: endTime },
+                    completed: false
+                }]);
+                setNewNote("");
+            };
+
+            return (
+                <div className="note-add">
+                    <input type="text" value={newNote} onChange={(e) => setNewNote(e.target.value)} />
+                    <button onClick={addTask}>Add</button>
+                </div>
+            );
+        }
+
+        function NoteApp() {
+            return (
+                <DataProvider>
+                    <div className="container">
+                        <NoteAdd />
+                        <NoteList />
+                    </div>
+                </DataProvider>
+            );
+        }
+
+        ReactDOM.render(<NoteApp />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
