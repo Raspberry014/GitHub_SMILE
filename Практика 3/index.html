@@ -12,7 +12,6 @@
 
         button {
             width: 100px;
-            height: fit-content;
             padding: 5px 0;
             background-color: #D9D9D9;
             border: none;
@@ -29,21 +28,11 @@
             border: 2px solid #ddd;
             border-radius: 8px;
             outline: none;
-            transition: all 0.3s ease;
         }
 
         input[type="text"] {
             width: 360px;
             font-size: 24px;
-        }
-
-        input:hover {
-            border-color: #aaa;
-        }
-
-        input:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
         }
 
         .container {
@@ -52,69 +41,23 @@
         }
 
         .note-card {
-            position: relative;
             background: #D9D9D9;
             padding: 10px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            opacity: 1;
+            transition: opacity 0.3s;
         }
 
-        .note-content {
-            background-color: #FC9F9F;
-            width: 650px;
-            height: 46px;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 24px;
+        .note-card.completed {
+            opacity: 0.5;
         }
 
-        .date-box {
-            background: #F71616;
-            width: 150px;
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
-            font-weight: 700;
-        }
-
-        .date-box__top {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .date-box__bottom {
-            text-align: center;
-            font-weight: 700;
-            font-size: 24px;
-        }
-
-        .note-actions {
-            cursor: pointer;
-            padding: 5px 0 5px 5px;
-            display: flex;
-            border-radius: 10px;
-        }
-
-        .note-actions img {
-            width: 20px;
-            height: 20px;
+        .note-actions button {
             margin-right: 5px;
-        }
-
-        .note-add {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0 60px;
-        }
-
-        .note-add__actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
         }
     </style>
 </head>
@@ -137,37 +80,41 @@
             );
         }
 
-        function NoteCard({ content, date, completed }) {
+        function NoteCard({ note, onDelete, onEdit, onComplete }) {
             return (
-                <div className={`note-card ${completed ? 'completed' : ''}`}>
-                    <div className="note-content">{content}</div>
-                    <DateView date={date} />
+                <div className={`note-card ${note.completed ? 'completed' : ''}`}>
+                    <div className="note-content">{note.content} - {note.date.day} {note.date.start}-{note.date.end}</div>
                     <div className="note-actions">
-                        <button>Edit</button>
-                        <button>Delete</button>
-                        <button>Done</button>
+                        <button onClick={() => onEdit(note)}>Edit</button>
+                        <button onClick={() => onDelete(note)}>Delete</button>
+                        <button onClick={() => onComplete(note)}>Done</button>
                     </div>
-                </div>
-            );
-        }
-
-        function DateView({ date }) {
-            return (
-                <div className="date-box">
-                    <div className="date-box__top">
-                        <div>{date.day}</div>
-                    </div>
-                    <div className="date-box__bottom">{date.start} - {date.end}</div>
                 </div>
             );
         }
 
         function NoteList() {
-            const { tasks } = React.useContext(DataContext);
+            const { tasks, setTasks } = React.useContext(DataContext);
+
+            const deleteTask = (taskToDelete) => {
+                setTasks(tasks.filter(task => task !== taskToDelete));
+            };
+
+            const editTask = (taskToEdit) => {
+                const newContent = prompt("Edit task:", taskToEdit.content);
+                if (newContent) {
+                    setTasks(tasks.map(task => task === taskToEdit ? { ...task, content: newContent } : task));
+                }
+            };
+
+            const completeTask = (taskToComplete) => {
+                setTasks(tasks.map(task => task === taskToComplete ? { ...task, completed: !task.completed } : task));
+            };
+
             return (
                 <div className="note-list">
                     {tasks.map((note, i) => (
-                        <NoteCard key={i} {...note} />
+                        <NoteCard key={i} note={note} onDelete={deleteTask} onEdit={editTask} onComplete={completeTask} />
                     ))}
                 </div>
             );
@@ -187,13 +134,24 @@
                     date: { day: date, start: startTime, end: endTime },
                     completed: false
                 }]);
+                clearFields();
+            };
+
+            const clearFields = () => {
                 setNewNote("");
+                setDate(new Date().toISOString().split("T")[0]);
+                setStartTime("09:00");
+                setEndTime("10:00");
             };
 
             return (
                 <div className="note-add">
                     <input type="text" value={newNote} onChange={(e) => setNewNote(e.target.value)} />
+                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                    <input type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
+                    <input type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
                     <button onClick={addTask}>Add</button>
+                    <button onClick={clearFields}>Clear</button>
                 </div>
             );
         }
