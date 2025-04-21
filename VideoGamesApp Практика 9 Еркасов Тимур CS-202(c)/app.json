@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "plugins": [
+      "expo-router"
+    ],
+    "name": "VideoGamesApp",
+    "slug": "VideoGamesApp",
+    "icon": "./assets/icon.png"
+  }
+}
