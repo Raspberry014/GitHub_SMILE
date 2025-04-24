@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КИС Университет - Стартовая страница</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background-color: rgba(0, 51, 102, 0.85);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    nav {
+      background-color: rgba(28, 43, 58, 0.9);
+      color: white;
+      width: 220px;
+      min-height: 100%;
+      padding-top: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      padding: 1rem;
+      border-bottom: 1px solid #33475b;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    nav ul li:hover {
+      background-color: #2d3f52;
+    }
+
+    .main {
+      display: flex;
+      flex: 1;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(3px);
+    }
+
+    .content-area {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .announcement {
+      background-color: rgba(255, 249, 230, 0.85);
+      backdrop-filter: blur(2px);
+      padding: 1rem 1.25rem;
+      border-left: 5px solid #ffbb33;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(2px);
+      padding: 1.25rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      color: #003366;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <img src="logo.png" alt="Логотип КИС" style="height: 40px; border-radius: 8px;">
+      <strong>КИС "Университет"</strong>
+    </div>
+    <div>Сотрудник: Иванов И.И. | <a href="#" onclick="logout()" style="color: #cce; text-decoration: underline;">Выход</a></div>
+  </header>
+
+  <div class="main">
+    <nav>
+      <ul>
+        <li data-link="index.html">Главная</li>
+        <li data-link="arm_raspisanie.html">Расписание</li>
+        <li data-link="arm_vedomosti.html">Ведомости</li>
+        <li data-link="arm_kadry.html">Преподаватели</li>
+        <li data-link="arm_kadry.html">Сотрудники</li>
+        <li data-link="arm_kadry.html">Кадры</li>
+        <li data-link="arm_analitika.html">Отчёты</li>
+        <li data-link="arm_nastroiki.html">Настройки</li>
+      </ul>
+    </nav>
+
+    <div class="content-area">
+      <div class="announcement">
+        <strong>Объявление:</strong> Сегодня в 15:00 состоится собрание кафедры ИТ в аудитории 301. Просьба всем присутствовать.
+      </div>
+
+      <div class="dashboard">
+        <div class="card" data-link="arm_raspisanie.html">
+          <h3>Расписание</h3>
+          <p>Управление экзаменами и занятиями</p>
+        </div>
+        <div class="card" data-link="arm_vedomosti.html">
+          <h3>Ведомости</h3>
+          <p>Создание и редактирование ведомостей</p>
+        </div>
+        <div class="card" data-link="arm_kadry.html">
+          <h3>Кадровый учёт</h3>
+          <p>Сотрудники, отпуска, ставки</p>
+        </div>
+        <div class="card" data-link="arm_analitika.html">
+          <h3>Аналитика</h3>
+          <p>Юбиляры, многодетные, пенсионеры</p>
+        </div>
+        <div class="card" data-link="arm_nastroiki.html">
+          <h3>Настройки</h3>
+          <p>Персональные параметры</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.card, nav ul li').forEach(elem => {
+      elem.addEventListener('click', () => {
+        const link = elem.getAttribute('data-link');
+        if (link) window.location.href = link;
+      });
+    });
+
+    function logout() {
+      localStorage.removeItem("savedLogin");
+      window.location.href = "auth.html"; // Замените на реальный путь к странице авторизации
+    }
+  </script>
+</body>
+</html>

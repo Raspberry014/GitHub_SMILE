@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АРМ - Расписание</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: rgba(0, 51, 102, 0.85);
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      background-color: #005fa3;
+    }
+
+    .controls {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .controls select, .controls input, .controls button {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .controls button {
+      background-color: #007acc;
+      color: white;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background-color: #005fa3;
+    }
+
+    table {
+      width: 100%;
+      background-color: white;
+      border-collapse: collapse;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>АРМ Расписание — КИС "Университет"</h2>
+  </header>
+
+  <div class="container">
+    <a class="back" href="index.html">← На главную</a>
+
+    <div class="controls">
+      <select>
+        <option>Группа</option>
+        <option>ИС-21</option>
+        <option>ПМ-22</option>
+      </select>
+      <select>
+        <option>Кафедра</option>
+        <option>ИТ</option>
+        <option>Математика</option>
+      </select>
+      <input type="date">
+      <button>Проверить уникальность</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Дата</th>
+          <th>Время</th>
+          <th>Аудитория</th>
+          <th>Предмет</th>
+          <th>Преподаватель</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-06-01</td>
+          <td>10:00</td>
+          <td>101</td>
+          <td>Информатика</td>
+          <td>Петров Н.Н.</td>
+        </tr>
+        <tr>
+          <td>2025-06-04</td>
+          <td>12:00</td>
+          <td>202</td>
+          <td>Математика</td>
+          <td>Сидоров А.А.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

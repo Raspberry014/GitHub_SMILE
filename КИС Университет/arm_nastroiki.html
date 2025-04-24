@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АРМ - Настройки</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: rgba(0, 51, 102, 0.85);
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 700px;
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      background-color: #005fa3;
+    }
+
+    .settings-block {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .settings-block h3 {
+      margin-top: 0;
+      color: #003366;
+    }
+
+    .settings-block label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 500;
+    }
+
+    .settings-block input,
+    .settings-block select {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .settings-block button {
+      margin-top: 1.5rem;
+      background-color: #007acc;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .settings-block button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>АРМ Настройки — КИС "Университет"</h2>
+  </header>
+
+  <div class="container">
+    <a class="back" href="index.html">← На главную</a>
+
+    <div class="settings-block">
+      <h3>Персональные параметры</h3>
+
+      <label for="lang">Язык интерфейса</label>
+      <select id="lang">
+        <option>Русский</option>
+        <option>English</option>
+      </select>
+
+      <label for="theme">Тема</label>
+      <select id="theme">
+        <option>Светлая</option>
+        <option>Тёмная</option>
+      </select>
+
+      <label for="email">Электронная почта</label>
+      <input type="email" id="email" placeholder="your@email.com">
+
+      <button>Сохранить настройки</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизация — КИС "Университет"</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 2rem;
+    }
+
+    .auth-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 140px;
+      margin: 0 auto 2rem;
+      display: block;
+      border-radius: 12px;
+      border: 2px solid #003366;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: fadeInLogo 1s ease-in-out;
+    }
+
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: scale(0.95); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    h2 {
+      color: #003366;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 500;
+      color: #003366;
+      text-align: left;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #005fa3;
+    }
+
+    .error {
+      margin-top: 1rem;
+      color: #c0392b;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .password-toggle {
+      position: relative;
+    }
+
+    .password-toggle span {
+      position: absolute;
+      top: 50%;
+      right: 0.75rem;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #007acc;
+      font-size: 1.2rem;
+    }
+  </style>
+
+  <script>
+    const users = [
+      { login: "admin", password: "admin123", role: "admin" },
+      { login: "staff1", password: "staff123", role: "staff" },
+      { login: "student1", password: "student123", role: "student" }
+    ];
+
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const role = document.getElementById("role").value;
+      const login = document.getElementById("login").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-message");
+
+      if (!login || !password) {
+        errorMsg.textContent = "Пожалуйста, введите логин и пароль.";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      const user = users.find(u => u.login === login && u.password === password && u.role === role);
+
+      if (!user) {
+        errorMsg.textContent = "Неверный логин, пароль или роль.";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      errorMsg.style.display = "none";
+      localStorage.setItem("savedLogin", login);
+
+      if (role === "admin") {
+        window.location.href = "index.html";
+      } else if (role === "staff") {
+        window.location.href = "arm_raspisanie.html";
+      } else if (role === "student") {
+        window.location.href = "student_dashboard.html";
+      }
+    }
+
+    function togglePassword() {
+      const input = document.getElementById("password");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    window.onload = () => {
+      const savedLogin = localStorage.getItem("savedLogin");
+      if (savedLogin) document.getElementById("login").value = savedLogin;
+    };
+  </script>
+</head>
+<body>
+  <div class="auth-box">
+    <img src="logo.png" alt="Логотип КИС Университет" class="logo">
+    <h2>Вход в систему</h2>
+    <form onsubmit="handleLogin(event)">
+      <label for="role">Роль</label>
+      <select id="role" name="role">
+        <option value="admin">Администратор / Ректор</option>
+        <option value="staff">Сотрудник</option>
+        <option value="student">Студент</option>
+      </select>
+
+      <label for="login">Логин</label>
+      <input type="text" id="login" name="login" placeholder="Введите логин">
+
+      <label for="password">Пароль</label>
+      <div class="password-toggle">
+        <input type="password" id="password" name="password" placeholder="Введите пароль" style="padding-right: 2.5rem;">
+        <span onclick="togglePassword()">👁️</span>
+      </div>
+
+      <button type="submit" class="btn">Войти</button>
+      <div id="error-message" class="error"></div>
+    </form>
+  </div>
+</body>
+</html>

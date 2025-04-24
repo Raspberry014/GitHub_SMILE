@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АРМ - Кадровый учёт</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: rgba(0, 51, 102, 0.85);
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      background-color: #005fa3;
+    }
+
+    table {
+      width: 100%;
+      background-color: white;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>АРМ Кадровый учёт — КИС "Университет"</h2>
+  </header>
+  <div class="container">
+    <a class="back" href="index.html">← На главную</a>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ФИО</th>
+          <th>Должность</th>
+          <th>Ставка</th>
+          <th>Дата приёма</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Абдрахманов Е.Т.</td>
+          <td>Программист</td>
+          <td>1.0</td>
+          <td>15.09.2020</td>
+        </tr>
+        <tr>
+          <td>Ким Л.И.</td>
+          <td>Методист</td>
+          <td>0.5</td>
+          <td>22.01.2022</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

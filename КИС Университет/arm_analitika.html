@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АРМ - Аналитика</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: rgba(0, 51, 102, 0.85);
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.92);
+      max-width: 1400px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      background-color: #005fa3;
+    }
+
+    .grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .card {
+      flex: 0 0 250px;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(2px);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      scroll-snap-align: start;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: #003366;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>АРМ Аналитика — КИС "Университет"</h2>
+  </header>
+
+  <div class="container">
+    <a class="back" href="index.html">← На главную</a>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Юбиляры</h3>
+        <p>5 сотрудников</p>
+      </div>
+      <div class="card">
+        <h3>Многодетные</h3>
+        <p>8 сотрудников</p>
+      </div>
+      <div class="card">
+        <h3>Пенсионеры</h3>
+        <p>12 сотрудников</p>
+      </div>
+      <div class="card">
+        <h3>Предпенсионеры</h3>
+        <p>6 сотрудников</p>
+      </div>
+      <div class="card">
+        <h3>Бездетные</h3>
+        <p>15 сотрудников</p>
+      </div>
+      <div class="card">
+        <h3>Работают на 2+ ставки</h3>
+        <p>4 сотрудника</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

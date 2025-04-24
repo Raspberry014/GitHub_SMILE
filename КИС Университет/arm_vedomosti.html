@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АРМ - Ведомости</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background-color: rgba(0, 51, 102, 0.85);
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #007acc;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      background-color: #005fa3;
+    }
+
+    .controls {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .controls input, .controls select {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #005fa3;
+    }
+
+    table {
+      width: 100%;
+      background-color: white;
+      border-collapse: collapse;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>АРМ Ведомости — КИС "Университет"</h2>
+  </header>
+
+  <div class="container">
+    <a class="back" href="index.html">← На главную</a>
+
+    <div class="controls">
+      <select>
+        <option>Выберите группу</option>
+        <option>ИС-21</option>
+        <option>ПМ-22</option>
+      </select>
+      <select>
+        <option>Предмет</option>
+        <option>Базы данных</option>
+        <option>Алгоритмы</option>
+      </select>
+      <button class="btn">Создать ведомость</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ФИО студента</th>
+          <th>Оценка</th>
+          <th>Неявка</th>
+          <th>Средний балл</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Иванов И.И.</td>
+          <td>5</td>
+          <td>Нет</td>
+          <td>4.6</td>
+        </tr>
+        <tr>
+          <td>Смирнова А.В.</td>
+          <td>4</td>
+          <td>Нет</td>
+          <td>4.1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

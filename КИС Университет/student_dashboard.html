@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студенческий кабинет — КИС "Университет"</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    :root {
+      --bg-light: rgba(255, 255, 255, 0.9);
+      --bg-dark: rgba(34, 40, 49, 0.9);
+      --text-light: #003366;
+      --text-dark: #f0f0f0;
+      --header-bg: rgba(0, 51, 102, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: url('bd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background-color 0.3s;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      background-color: var(--bg-light);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode main {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    h2 {
+      color: inherit;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h3 {
+      color: inherit;
+      margin-bottom: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    body.dark-mode table {
+      background-color: #1f1f1f;
+      color: #ddd;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+    }
+
+    .logout {
+      color: #cce;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .announcement {
+      background-color: #fff9e6;
+      padding: 1rem;
+      border-left: 5px solid #ffbb33;
+      border-radius: 8px;
+      color: #444;
+    }
+
+    .theme-toggle {
+      background-color: #007acc;
+      border: none;
+      padding: 0.4rem 1rem;
+      color: white;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+
+    .profile-form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .profile-form label {
+      font-weight: 600;
+    }
+
+    .profile-form input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .profile-form button {
+      align-self: start;
+      background-color: #007acc;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .profile-form button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+  <script>
+    function logout() {
+      localStorage.removeItem("savedLogin");
+      window.location.href = "auth.html";
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div><strong>КИС "Университет"</strong></div>
+    <div>
+      Студент: Ахметов А.Б. |
+      <span class="logout" onclick="logout()">Выход</span>
+      <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="section">
+      <h3>📅 Расписание занятий</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Предмет</th>
+            <th>Аудитория</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-05-01</td>
+            <td>10:00</td>
+            <td>Информатика</td>
+            <td>302</td>
+          </tr>
+          <tr>
+            <td>2025-05-02</td>
+            <td>12:00</td>
+            <td>Математика</td>
+            <td>305</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>📑 Успеваемость</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Предмет</th>
+            <th>Оценка</th>
+            <th>Комментарий</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Информатика</td>
+            <td>5</td>
+            <td>Отлично</td>
+          </tr>
+          <tr>
+            <td>Математика</td>
+            <td>4</td>
+            <td>Хорошо</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>📢 Объявления</h3>
+      <div class="announcement">
+        До 10 мая необходимо сдать лабораторные по Информатике. Просьба не опаздывать с дедлайнами.
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>⚙️ Редактирование профиля</h3>
+      <form class="profile-form">
+        <label for="student-email">Электронная почта</label>
+        <input type="email" id="student-email" placeholder="student@email.com">
+
+        <label for="student-password">Новый пароль</label>
+        <input type="password" id="student-password" placeholder="Введите новый пароль">
+
+        <button type="button" onclick="alert('Изменения сохранены')">Сохранить</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
