@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Аналитика</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Популярность мест отдыха</h3>
+      <img class="plot" src="/static/plots/places_overall.png" alt="places">
+    </div>
+    <div class="card">
+      <h3>Доход ↔ Затраты</h3>
+      <img class="plot" src="/static/plots/income_spend_corr.png" alt="corr">
+      <p>Корреляция Пирсона: <b>{{ corr }}</b></p>
+    </div>
+    <div class="card">
+      <h3>Помесячная динамика</h3>
+      <img class="plot" src="/static/plots/monthly_trend.png" alt="monthly">
+    </div>
+    <div class="card">
+      <h3>Сезонность</h3>
+      <img class="plot" src="/static/plots/seasonal.png" alt="seasonal">
+    </div>
+  </div>
+{% endblock %}

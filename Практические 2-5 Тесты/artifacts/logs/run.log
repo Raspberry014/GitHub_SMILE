@@ -1,0 +1,210 @@
+2026-01-23 13:36:57,224 | INFO | OPEN /modal-dialogs
+2026-01-23 13:36:57,266 | INFO | OPEN /frames
+2026-01-23 13:36:57,275 | INFO | OPEN /browser-windows
+6-01-23 13:36:57,246 | INFO | OPEN /webtables
+2026-01-23 13:36:57,246 | INFO | OPEN /radio-button
+2026-01-23 13:36:57,248 | INFO | OPEN /text-box
+2026-01-23 13:36:57,246 | INFO | OPEN /automation-practice-form
+2026-01-23 13:36:57,266 | INFO | OPEN /text-box
+2026-01-23 13:36:57,266 | INFO | OPEN /radio-button
+2026-01-23 13:36:57,266 | INFO | OPEN /upload-download
+2026-01-23 13:36:57,266 | INFO | OPEN /links
+2026-01-23 13:36:57,344 | INFO | OPEN /alerts
+2026-01-23 13:36:57,359 | INFO | OPEN /automation-practice-form
+2026-01-23 13:50:30,555 | INFO | OPEN /webtables
+2026-01-23 13:50:30,647 | INFO | OPEN /checkbox
+2026-01-23 13:50:30,687 | INFO | OPEN /modal-dialogs
+2026-01-23 13:50:30,692 | INFO | OPEN /browser-windows
+2026-01-23 13:50:30,698 | INFO | OPEN /checkbox
+2026-01-23 13:50:30,699 | INFO | OPEN /radio-button
+2026-01-23 13:50:30,781 | INFO | OPEN /automation-practice-form
+2026-01-23 13:50:30,794 | INFO | OPEN /checkbox
+2026-01-23 13:50:30,834 | INFO | OPEN /upload-download
+2026-01-23 13:50:30,834 | INFO | OPEN /radio-button
+2026-01-23 13:50:30,885 | INFO | OPEN /upload-download
+2026-01-23 13:50:30,891 | INFO | OPEN /alerts
+2026-01-23 13:50:30,892 | INFO | OPEN /links
+2026-01-23 13:50:30,894 | INFO | OPEN /links
+2026-01-23 13:50:30,923 | INFO | OPEN /automation-practice-form
+2026-01-23 13:50:30,927 | INFO | OPEN /text-box
+2026-01-23 13:50:30,936 | INFO | OPEN /buttons
+2026-01-23 13:50:30,947 | INFO | OPEN /frames
+2026-01-23 13:50:30,970 | INFO | OPEN /text-box
+2026-01-23 14:06:24,741 | INFO | OPEN /checkbox
+2026-01-23 14:06:24,743 | INFO | OPEN /text-box
+2026-01-23 14:06:24,744 | INFO | OPEN /radio-button
+2026-01-23 14:06:24,754 | INFO | OPEN /upload-download
+2026-01-23 14:06:24,760 | INFO | OPEN /upload-download
+2026-01-23 14:06:24,802 | INFO | OPEN /radio-button
+2026-01-23 14:06:24,833 | INFO | OPEN /modal-dialogs
+2026-01-23 14:06:24,911 | INFO | OPEN /text-box
+2026-01-23 14:06:24,911 | INFO | OPEN /links
+2026-01-23 14:06:24,924 | INFO | OPEN /buttons
+2026-01-23 14:06:24,951 | INFO | OPEN /checkbox
+2026-01-23 14:06:24,953 | INFO | OPEN /frames
+2026-01-23 14:06:24,963 | INFO | OPEN /radio-button
+2026-01-23 14:06:24,968 | INFO | OPEN /automation-practice-form
+2026-01-23 14:06:24,968 | INFO | OPEN /browser-windows
+2026-01-23 14:06:24,970 | INFO | OPEN /automation-practice-form
+2026-01-23 14:06:24,980 | INFO | OPEN /webtables
+2026-01-23 14:06:24,984 | INFO | OPEN /checkbox
+2026-01-23 14:06:25,026 | INFO | OPEN /alerts
+2026-01-23 14:06:25,026 | INFO | OPEN /links
+2026-01-23 14:10:03,608 | INFO | OPEN /alerts
+2026-01-23 14:10:11,483 | INFO | OPEN /modal-dialogs
+2026-01-23 14:10:19,351 | INFO | OPEN /buttons
+2026-01-23 14:10:24,886 | INFO | CLICK #dynamicClickBtn
+2026-01-23 14:22:36,830 | INFO | OPEN /alerts
+2026-01-23 14:22:36,837 | INFO | OPEN /frames
+2026-01-23 14:22:50,888 | INFO | OPEN /browser-windows
+2026-01-23 14:22:50,993 | INFO | OPEN /modal-dialogs
+2026-01-23 14:22:59,300 | INFO | OPEN /checkbox
+2026-01-23 14:23:00,366 | INFO | OPEN /buttons
+2026-01-23 14:23:05,693 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:23:06,006 | INFO | OPEN /links
+2026-01-23 14:23:10,157 | INFO | OPEN /checkbox
+2026-01-23 14:23:12,379 | INFO | OPEN /links
+2026-01-23 14:23:18,441 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:23:18,557 | INFO | CLICK button[title='Collapse all']
+2026-01-23 14:23:18,786 | INFO | OPEN /checkbox
+2026-01-23 14:23:19,197 | INFO | OPEN /radio-button
+2026-01-23 14:23:25,484 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:23:25,802 | INFO | OPEN /radio-button
+2026-01-23 14:23:28,374 | INFO | OPEN /radio-button
+2026-01-23 14:23:32,213 | INFO | OPEN /text-box
+2026-01-23 14:23:35,225 | INFO | OPEN /text-box
+2026-01-23 14:23:37,796 | INFO | FILL #userName = 'Timur Yerkassov'
+2026-01-23 14:23:37,840 | INFO | FILL #userEmail = 'erkasov.timur01@gmail.com'
+2026-01-23 14:23:37,872 | INFO | FILL #currentAddress = 'Pavlodar'
+2026-01-23 14:23:37,906 | INFO | FILL #permanentAddress = 'Pavlodar, KZ'
+2026-01-23 14:23:37,937 | INFO | CLICK #submit
+2026-01-23 14:23:38,149 | INFO | OPEN /upload-download
+2026-01-23 14:23:40,796 | INFO | FILL #userName = 'Test'
+2026-01-23 14:23:40,839 | INFO | FILL #userEmail = 'not-an-email'
+2026-01-23 14:23:40,871 | INFO | FILL #currentAddress = 'A'
+2026-01-23 14:23:40,908 | INFO | FILL #permanentAddress = 'B'
+2026-01-23 14:23:40,943 | INFO | CLICK #submit
+2026-01-23 14:23:41,095 | INFO | OPEN /upload-download
+2026-01-23 14:23:43,972 | INFO | OPEN /webtables
+2026-01-23 14:23:47,025 | INFO | OPEN /automation-practice-form
+2026-01-23 14:23:49,770 | INFO | CLICK #addNewRecordButton
+2026-01-23 14:23:49,863 | INFO | FILL #firstName = 'Gabrielle'
+2026-01-23 14:23:50,274 | INFO | FILL #lastName = 'Novak'
+2026-01-23 14:23:50,311 | INFO | FILL #userEmail = 'vincentwalls@example.net'
+2026-01-23 14:23:50,357 | INFO | FILL #age = '28'
+2026-01-23 14:23:50,388 | INFO | FILL #salary = '5000'
+2026-01-23 14:23:50,423 | INFO | FILL #department = 'QA'
+2026-01-23 14:23:50,454 | INFO | CLICK #submit
+2026-01-23 14:23:50,526 | INFO | FILL #searchBox = 'vincentwalls@example.net'
+2026-01-23 14:23:50,622 | INFO | FILL #department = 'Automation'
+2026-01-23 14:23:51,040 | INFO | CLICK #submit
+2026-01-23 14:23:51,107 | INFO | FILL #searchBox = 'vincentwalls@example.net'
+2026-01-23 14:23:51,188 | INFO | FILL #searchBox = 'vincentwalls@example.net'
+2026-01-23 14:23:51,278 | INFO | OPEN /automation-practice-form
+2026-01-23 14:23:52,460 | INFO | FILL #firstName = 'Rebecca'
+2026-01-23 14:23:52,506 | INFO | FILL #lastName = 'Wade'
+2026-01-23 14:23:52,558 | INFO | FILL #userEmail = 'cummingsrenee@example.net'
+2026-01-23 14:23:52,587 | INFO | FILL #userNumber = '9000000000'
+2026-01-23 14:40:32,661 | INFO | OPEN /alerts
+2026-01-23 14:40:32,662 | INFO | OPEN /frames
+2026-01-23 14:40:44,223 | INFO | OPEN /modal-dialogs
+2026-01-23 14:40:54,105 | INFO | OPEN /browser-windows
+2026-01-23 14:40:56,011 | INFO | OPEN /buttons
+2026-01-23 14:41:12,338 | INFO | OPEN /checkbox
+2026-01-23 14:41:12,733 | INFO | OPEN /checkbox
+2026-01-23 14:41:16,333 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:41:16,476 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:41:16,595 | INFO | CLICK button[title='Collapse all']
+2026-01-23 14:41:16,644 | INFO | OPEN /links
+2026-01-23 14:41:16,769 | INFO | OPEN /checkbox
+2026-01-23 14:41:21,355 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:41:21,399 | INFO | OPEN /links
+2026-01-23 14:41:21,728 | INFO | OPEN /radio-button
+2026-01-23 14:41:30,072 | INFO | OPEN /radio-button
+2026-01-23 14:41:32,288 | INFO | OPEN /radio-button
+2026-01-23 14:41:39,191 | INFO | OPEN /text-box
+2026-01-23 14:41:42,994 | INFO | FILL #userName = 'Timur Yerkassov'
+2026-01-23 14:41:43,075 | INFO | FILL #userEmail = 'erkasov.timur01@gmail.com'
+2026-01-23 14:41:43,149 | INFO | FILL #currentAddress = 'Pavlodar'
+2026-01-23 14:41:43,329 | INFO | OPEN /text-box
+2026-01-23 14:41:43,341 | INFO | FILL #permanentAddress = 'Pavlodar, KZ'
+2026-01-23 14:41:43,405 | INFO | CLICK #submit
+2026-01-23 14:41:43,637 | INFO | OPEN /upload-download
+2026-01-23 14:41:50,115 | INFO | OPEN /webtables
+2026-01-23 14:41:52,808 | INFO | FILL #userName = 'Test'
+2026-01-23 14:41:52,870 | INFO | FILL #userEmail = 'not-an-email'
+2026-01-23 14:41:52,919 | INFO | FILL #currentAddress = 'A'
+2026-01-23 14:41:52,970 | INFO | FILL #permanentAddress = 'B'
+2026-01-23 14:41:53,024 | INFO | CLICK #submit
+2026-01-23 14:41:53,227 | INFO | OPEN /upload-download
+2026-01-23 14:41:54,357 | INFO | CLICK #addNewRecordButton
+2026-01-23 14:41:54,489 | INFO | FILL #firstName = 'Janice'
+2026-01-23 14:41:54,861 | INFO | FILL #lastName = 'Hernandez'
+2026-01-23 14:41:54,904 | INFO | FILL #userEmail = 'michaelperkins@example.net'
+2026-01-23 14:41:54,957 | INFO | FILL #age = '28'
+2026-01-23 14:41:54,999 | INFO | FILL #salary = '5000'
+2026-01-23 14:41:55,064 | INFO | FILL #department = 'QA'
+2026-01-23 14:41:55,131 | INFO | CLICK #submit
+2026-01-23 14:41:55,301 | INFO | FILL #searchBox = 'michaelperkins@example.net'
+2026-01-23 14:41:55,442 | INFO | FILL #department = 'Automation'
+2026-01-23 14:41:55,907 | INFO | CLICK #submit
+2026-01-23 14:41:56,053 | INFO | FILL #searchBox = 'michaelperkins@example.net'
+2026-01-23 14:41:56,213 | INFO | FILL #searchBox = 'michaelperkins@example.net'
+2026-01-23 14:41:56,406 | INFO | OPEN /automation-practice-form
+2026-01-23 14:41:59,533 | INFO | OPEN /automation-practice-form
+2026-01-23 14:42:02,435 | INFO | FILL #firstName = 'Daniel'
+2026-01-23 14:42:02,547 | INFO | FILL #lastName = 'Cohen'
+2026-01-23 14:42:02,746 | INFO | FILL #userEmail = 'rogeranderson@example.org'
+2026-01-23 14:42:02,865 | INFO | FILL #userNumber = '9000000000'
+2026-01-23 14:42:33,318 | INFO | FILL #currentAddress = 'Pavlodar'
+2026-01-23 14:53:06,663 | INFO | OPEN /frames
+2026-01-23 14:53:06,664 | INFO | OPEN /alerts
+2026-01-23 14:53:25,590 | INFO | OPEN /browser-windows
+2026-01-23 14:53:32,011 | INFO | OPEN /modal-dialogs
+2026-01-23 14:53:32,036 | INFO | OPEN /buttons
+2026-01-23 14:53:47,616 | INFO | OPEN /checkbox
+2026-01-23 14:54:04,002 | INFO | OPEN /checkbox
+2026-01-23 14:54:09,934 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:54:10,065 | INFO | CLICK button[title='Collapse all']
+2026-01-23 14:54:10,293 | INFO | OPEN /checkbox
+2026-01-23 14:54:22,889 | INFO | OPEN /links
+2026-01-23 14:54:23,656 | INFO | CLICK button[title='Expand all']
+2026-01-23 14:54:23,978 | INFO | OPEN /links
+2026-01-23 14:54:31,059 | INFO | OPEN /radio-button
+2026-01-23 14:54:33,225 | INFO | OPEN /radio-button
+2026-01-23 14:54:35,282 | INFO | OPEN /radio-button
+2026-01-23 14:54:41,857 | INFO | OPEN /text-box
+2026-01-23 14:54:43,592 | INFO | OPEN /text-box
+2026-01-23 14:54:48,951 | INFO | FILL #userName = 'Timur Yerkassov'
+2026-01-23 14:54:49,008 | INFO | FILL #userEmail = 'erkasov.timur01@gmail.com'
+2026-01-23 14:54:49,076 | INFO | FILL #currentAddress = 'Pavlodar'
+2026-01-23 14:54:49,138 | INFO | FILL #permanentAddress = 'Pavlodar, KZ'
+2026-01-23 14:54:49,208 | INFO | CLICK #submit
+2026-01-23 14:54:49,503 | INFO | OPEN /upload-download
+2026-01-23 14:54:49,954 | INFO | FILL #userName = 'Test'
+2026-01-23 14:54:50,021 | INFO | FILL #userEmail = 'not-an-email'
+2026-01-23 14:54:50,072 | INFO | FILL #currentAddress = 'A'
+2026-01-23 14:54:50,123 | INFO | FILL #permanentAddress = 'B'
+2026-01-23 14:54:50,174 | INFO | CLICK #submit
+2026-01-23 14:54:50,403 | INFO | OPEN /upload-download
+2026-01-23 14:54:54,911 | INFO | OPEN /automation-practice-form
+2026-01-23 14:54:55,263 | INFO | OPEN /webtables
+2026-01-23 14:55:01,200 | INFO | FILL #firstName = 'Julie'
+2026-01-23 14:55:01,269 | INFO | FILL #lastName = 'Jenkins'
+2026-01-23 14:55:01,319 | INFO | FILL #userEmail = 'mwilliams@example.net'
+2026-01-23 14:55:01,398 | INFO | FILL #userNumber = '9000000000'
+2026-01-23 14:55:02,931 | INFO | CLICK #addNewRecordButton
+2026-01-23 14:55:03,072 | INFO | FILL #firstName = 'Joseph'
+2026-01-23 14:55:03,520 | INFO | FILL #lastName = 'Smith'
+2026-01-23 14:55:03,604 | INFO | FILL #userEmail = 'kwilliams@example.com'
+2026-01-23 14:55:03,668 | INFO | FILL #age = '28'
+2026-01-23 14:55:03,732 | INFO | FILL #salary = '5000'
+2026-01-23 14:55:03,796 | INFO | FILL #department = 'QA'
+2026-01-23 14:55:03,875 | INFO | CLICK #submit
+2026-01-23 14:55:04,024 | INFO | FILL #searchBox = 'kwilliams@example.com'
+2026-01-23 14:55:04,196 | INFO | FILL #department = 'Automation'
+2026-01-23 14:55:04,564 | INFO | CLICK #submit
+2026-01-23 14:55:04,677 | INFO | FILL #searchBox = 'kwilliams@example.com'
+2026-01-23 14:55:04,864 | INFO | FILL #searchBox = 'kwilliams@example.com'
+2026-01-23 14:55:31,918 | INFO | FILL #currentAddress = 'Pavlodar'
+2026-01-23 14:55:32,227 | INFO | OPEN /automation-practice-form

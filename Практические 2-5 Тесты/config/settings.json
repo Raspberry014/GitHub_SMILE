@@ -1,0 +1,7 @@
+{
+  "base_url": "https://demoqa.com",
+  "browser": "chromium",
+  "headless": true,
+  "timeout_ms": 30000,
+  "record_video": false
+}

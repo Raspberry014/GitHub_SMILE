@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Путёвки (первые 100)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Клиент</th><th>Место</th><th>Дата начала</th>
+        <th>Длительность (дн)</th><th>Сумма затрат</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+        <tr>
+          <td>{{ r.id }}</td>
+          <td>{{ r.fio }}</td>
+          <td>{{ r.place }}</td>
+          <td>{{ r.start_date }}</td>
+          <td>{{ r.duration_days }}</td>
+          <td>{{ "{:,.0f}".format(r.spend_amount).replace(",", " ") }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

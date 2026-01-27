@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Добавить клиента и путёвку</h2>
+  <form method="post">
+    <label>Фамилия</label><input name="last_name" required>
+    <label>Имя</label><input name="first_name" required>
+    <label>Отчество</label><input name="patronymic" required>
+    <label>Возраст</label><input name="age" type="number" min="0" max="120" required>
+    <label>Образование</label>
+    <select name="education_id">
+      {% for e in educations %}<option value="{{ e.id }}">{{ e.name }}</option>{% endfor %}
+    </select>
+    <label>Социальный статус</label>
+    <select name="social_status_id">
+      {% for s in statuses %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}
+    </select>
+    <label>Доход (в мес.)</label><input name="income" type="number" min="0" step="1" required>
+    <label>Место отдыха</label>
+    <select name="place_id">
+      {% for p in places %}<option value="{{ p.id }}">{{ p.name }}</option>{% endfor %}
+    </select>
+    <label>Дата начала (ГГГГ-ММ-ДД)</label><input name="start_date" placeholder="2025-07-01" required>
+    <label>Длительность (дней)</label><input name="duration_days" type="number" min="1" required>
+    <label>Сумма затрат</label><input name="spend_amount" type="number" min="0" step="1" required>
+    <p style="margin-top:12px"><button class="btn" type="submit">Сохранить</button></p>
+  </form>
+{% endblock %}

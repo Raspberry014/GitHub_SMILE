@@ -1,0 +1,6 @@
+pytest
+pytest-html
+pytest-xdist
+playwright
+pytest-playwright
+Faker
