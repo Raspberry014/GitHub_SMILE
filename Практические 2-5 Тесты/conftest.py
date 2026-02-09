@@ -1,5 +1,6 @@
 import json
 import os
+import logging
 from pathlib import Path
 import pytest
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeoutError, Error as PWError
@@ -109,3 +110,18 @@ def pytest_runtest_makereport(item, call):
     except (PWTimeoutError, PWError, Exception):
         pass
 
+
+
+# --- logging (per worker) ---
+def pytest_configure(config):
+    Path("artifacts/logs").mkdir(parents=True, exist_ok=True)
+    worker = os.getenv("PYTEST_XDIST_WORKER", "main")
+    log_file = Path("artifacts/logs") / f"run_{worker}.log"
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s | %(levelname)s | %(message)s",
+        handlers=[
+            logging.FileHandler(log_file, encoding="utf-8"),
+            logging.StreamHandler(),
+        ],
+    )

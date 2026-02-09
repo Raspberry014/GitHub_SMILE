@@ -3,4 +3,4 @@ pytest-html
 pytest-xdist
 playwright
 pytest-playwright
-Faker
+faker

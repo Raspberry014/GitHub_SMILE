@@ -17,7 +17,7 @@ class CheckBoxPage(BasePage):
 
     def select_parent_home(self):
         # Click the checkbox UI near "Home"
-        self.page.locator("label[for='tree-node-home'] span.rct-checkbox").click()
+        self.page.locator("label[for='tree-node-home'] span.rct-checkbox").click() 
         return self
 
     def select_child_notes(self):
@@ -25,6 +25,7 @@ class CheckBoxPage(BasePage):
         self.page.get_by_text("Home", exact=True).scroll_into_view_if_needed()
         self.page.locator("label[for='tree-node-notes'] span.rct-checkbox").click()
         return self
+     #github 
 
     def assert_result_contains(self, *tokens: str):
         expect(self.page.locator("#result")).to_be_visible()
